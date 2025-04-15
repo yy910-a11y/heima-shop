@@ -4,8 +4,10 @@
     "allowJs": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "moduleResolution": "node", 
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "vue": ["node_modules/vue"] 
     },
     "lib": ["esnext", "dom"],
     "types": [
