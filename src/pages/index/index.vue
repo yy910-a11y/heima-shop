@@ -1,5 +1,18 @@
 <script setup lang="ts">
+import { getHomeBannerAPI } from '@/services/home'
+import { onLoad } from '@dcloudio/uni-app'
 import CustomNavbar from './components/CustomNavbar.vue'
+import { ref } from 'vue'
+const bannerList = ref([])
+const getHomeBannerData = async () => {
+  const res = await getHomeBannerAPI()
+  console.log(res)
+  bannerList.value = res.result
+}
+
+onLoad(() => {
+  getHomeBannerData()
+})
 </script>
 <template>
   <!-- 自定义导航栏 -->
