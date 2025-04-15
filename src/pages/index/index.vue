@@ -3,10 +3,10 @@ import { getHomeBannerAPI } from '@/services/home'
 import { onLoad } from '@dcloudio/uni-app'
 import CustomNavbar from './components/CustomNavbar.vue'
 import { ref } from 'vue'
-const bannerList = ref([])
+import type { BannerItem } from '@/types/home'
+const bannerList = ref<BannerItem[]>([])
 const getHomeBannerData = async () => {
   const res = await getHomeBannerAPI()
-  console.log(res)
   bannerList.value = res.result
 }
 
@@ -17,9 +17,8 @@ onLoad(() => {
 <template>
   <!-- 自定义导航栏 -->
   <CustomNavbar />
-  //下面这个为什么不用导入呢,是因为在package.json中配置了
   <!-- 自定义轮播图 -->
-  <XtxSwiper />
+  <XtxSwiper :list="bannerList" />
   <view class="index">index</view>
 </template>
 

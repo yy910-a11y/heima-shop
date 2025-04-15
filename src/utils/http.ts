@@ -50,7 +50,7 @@ uni.addInterceptor('uploadFile', httpInterceptor)
   3.2 401错误
   3.3其它错误
 */
-interface Data<T> {
+type Data<T> = {
   code: string
   msg: string
   result: T
