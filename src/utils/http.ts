@@ -57,7 +57,7 @@ type Data<T> = {
 //2.2添加类型 支持泛型
 export const http = <T>(options: UniApp.RequestOptions) => {
   //返回Promise对象
-  return new Promise((resolve, reject) => {
+  return new Promise<Data<T>>((resolve, reject) => {
     uni.request({
       ...options,
       //请求成功

@@ -4,7 +4,12 @@ export default {
 }
 </script>
 <script setup lang="ts">
-//
+import type { CategoryItem } from '@/types/home'
+
+//定义props接收数据
+defineProps<{
+  list: CategoryItem[]
+}>()
 </script>
 <template>
   <view class="category">
@@ -12,14 +17,11 @@ export default {
       class="category-item"
       hover-class="none"
       url="/pages/index/index"
-      v-for="item in 10"
-      :key="item"
+      v-for="item in list"
+      :key="item.id"
     >
-      <image
-        class="icon"
-        src="https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/nav_icon_1.png"
-      ></image>
-      <text class="text">居家</text>
+      <image class="icon" :src="item.icon"></image>
+      <text class="text">{{ item.name }}</text>
     </navigator>
   </view>
 </template>
