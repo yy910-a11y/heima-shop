@@ -11,6 +11,11 @@ const getHomeGoodsGuessLikeData = async () => {
 onMounted(() => {
   getHomeGoodsGuessLikeData()
 })
+//暴露方法
+defineExpose({
+  //名字太长，改个名字
+  getMore: getHomeGoodsGuessLikeData,
+})
 </script>
 
 <template>
