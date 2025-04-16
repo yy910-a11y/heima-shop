@@ -1,5 +1,5 @@
 // api/home.ts
-import type { BannerItem, CategoryItem } from '@/types/home'
+import type { BannerItem, CategoryItem, HotItem } from '@/types/home'
 import { http } from '@/utils/http'
 
 export const getHomeBannerAPI = (distributionSite = 1) => {
@@ -20,5 +20,15 @@ export const getHomeCatagoryAPI = () => {
   return http<CategoryItem[]>({
     method: 'GET',
     url: '/home/category/mutli',
+  })
+}
+// services/home.ts
+/**
+ * 首页-热门推荐-小程序
+ */
+export const getHomeHotAPI = () => {
+  return http<HotItem[]>({
+    method: 'GET',
+    url: '/home/hot/mutli',
   })
 }
