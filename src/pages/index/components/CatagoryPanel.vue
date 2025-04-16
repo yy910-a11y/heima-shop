@@ -1,7 +1,11 @@
+<script lang="ts">
+export default {
+  name: 'CatagoryPanel',
+}
+</script>
 <script setup lang="ts">
 //
 </script>
-
 <template>
   <view class="category">
     <navigator

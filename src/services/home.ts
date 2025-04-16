@@ -13,3 +13,12 @@ export const getHomeBannerAPI = (distributionSite = 1) => {
     },
   })
 }
+// /home/category/mutli
+// 首页-前台分类 小程序
+//GET
+export const getHomeCatagoryAPI = () => {
+  return http({
+    method: 'GET',
+    url: '/home/category/mutli',
+  })
+}
