@@ -6,7 +6,7 @@ import type { GuessItem } from '@/types/home'
 
 //分页参数
 const pageParams: Required<PageParams> = {
-  page: 30,
+  page: 1,
   pageSize: 10,
 }
 //猜你喜欢列表
@@ -30,6 +30,11 @@ const getHomeGoodsGuessLikeData = async () => {
     finish.value = true
   }
 }
+//重置数据
+const resetData = () => {
+  ;(pageParams.page = 1), (guessList.value = [])
+  finish.value = false
+}
 //组件挂载完毕
 onMounted(() => {
   getHomeGoodsGuessLikeData()
@@ -38,6 +43,7 @@ onMounted(() => {
 defineExpose({
   //名字太长，改个名字
   getMore: getHomeGoodsGuessLikeData,
+  resetData,
 })
 </script>
 
