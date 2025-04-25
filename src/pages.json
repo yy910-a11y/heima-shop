@@ -37,7 +37,9 @@
 		{
 			"path": "pages/category/category",
 			"style": {
-				"navigationBarTitleText": "分类"
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white",
+				"navigationBarTitleText": "我的"
 			}
 		},
 		{
@@ -97,5 +99,19 @@
 				"selectedIconPath": "static/tabs/user_selected.png"
 			}
 		]
-	}
+	},
+	"subPackages": [
+		{
+			"root": "pageMember",
+			"pages": [
+				{
+					"path": "profile/profile",
+					"style": {
+						"navigationStyle":"custom",
+						"navigationBarTitleText": "个人信息页"
+					}
+				}
+			]
+		}
+	]
 }
